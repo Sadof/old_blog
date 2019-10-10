@@ -1,0 +1,40 @@
+{% extends "blog/base_generic.html" %}
+{% block content %}
+
+{% if perms.catalog.self_edif %}
+<a href ="">Edit</a>
+{% endif %}
+
+<div class="post">
+<h1>{{ post.post_title}}</h1>
+<p>{{ post.post_text}}</p></div>
+<div class="commentSection">
+{% if user.is_authenticated %}
+<form action="{% url 'blog:add_comment' post.id%}" method="post" class="comment-add">
+{% csrf_token %}
+    <p>{{user.get_username}}</p>
+{{ form }}
+<input type="submit" value="Ok">
+</form>
+{% else %}
+<p><a href="../../accounts/login?next={{request.path}}">Authenticated</a> to write comments</p>
+{% endif%}
+
+{% if post.comment_set.all %}
+    <ul>
+    {% for comment in post.comment_set.all reversed %}
+        <div class="comment-container">
+            <a href="#" class="comment-name">{{ comment.user }}</a>
+			<p class="comment-body">{{comment.text}}</p>
+			<p class="comment-date">{{comment.date}}</p>
+		</div>
+    {% endfor %}
+    </ul>
+    {% else %}
+<p>No comments yet.</p>
+{% endif %}
+
+<p>Visted :{{visits}}</p>
+{% endblock %}
+</div>
+

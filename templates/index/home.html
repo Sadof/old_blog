@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<title>Index</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'mysite/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+	<div class="nav-container">
+		<ul>
+			<li>
+				<a href="/">Home</a></li><li>
+				<a href="/blog">Blog</a></li><li>
+				<a href="/polls">Polls</a></li><li class="leftside">
+				{% if user.is_authenticated %}
+					<li><a href="accounts/{{ user.get_username }}">{{ user.get_username }}</a></li>
+            		<li><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>
+            	{% else %}
+					<li><a href="accounts/registration">Registration</a></li>
+            		<li><a href="{% url 'login'%}?next={{request.path}}">Войти</a></li>
+            	{% endif %}
+		</ul>
+	</div>
+	<div class="nav-search">
+		<form class="search" action="#">
+			<input type="search" name="site-search" placeholder="  Search smth"><button type="submit"><i class="fa fa-search"></i></button>
+
+		</form>
+	</div>
+</header>
+
+<main>
+	<div class="main">
+	<h1>Домашняя страница</h1>
+	<div class="info">
+		<p>Главная страница, моего самодельного сайта. Бекэнд написан на Django.Из написанных модулей здесь представлены:</p>
+		<ul>
+		<li>
+			<h2>Polls</h2>
+			<p>Пример воспроизведенный с официальной документации Django(без каких либо правок).</p>
+		</li>
+		<li>
+			<h2>Blog</h2>
+			<p>Пример, не отличающийся оригинальностью, но выполненный самостоятельно по примеииу Polls.</p>
+		</li>
+		</ul>
+	</div>
+	<div class="post">
+		<h2>Post title</h2>
+		<div class="postHeader">By <a href="#" class="nickname">Sadof</a> Posted <a href="#" class="postdate">date</a></div>
+		<div class="postBody">30 Great Examples of Blog Post Styling. Post Images. If not the headline, the post image is the first part of the post that people see. Breadcrumbs. Breadcrumbs help with navigation and SEO, but most of the time their ugly and unnecessary for people who frequent your site. Meta Data. Drop Caps. Intro </div>
+	</div>
+	<div class="post">
+		<h2>Post title</h2>
+		<div class="postHeader">By <a href="#" class="nickname">Sadof</a> Posted <a href="#" class="postdate">date</a></div>
+		<div class="postBody">30 Great Examples of Blog Post Styling. Post Images. If not the headline, the post image is the first part of the post that people see. Breadcrumbs. Breadcrumbs help with navigation and SEO, but most of the time their ugly and unnecessary for people who frequent your site. Meta Data. Drop Caps. Intro </div>
+		<form class="comment-add" action="">
+			<ul>
+			<li><input type="text" name="nickname" placeholder="Nick" class="nick"></li>
+			<li><input type="text" name="nickname" placeholder="Comment" class="comment"></li>
+			<li><input type="submit" name="" class="submit"></li>
+			</ul>
+		</form>
+		<div class="comment-container">
+			<a href="#" class="comment-name">Sadof</a>
+			<p class="comment-body">Ох уж эта верстка</p>
+			<p class="comment-date"> 12:00 29.04.2019</p>
+		</div>
+		<div class="comment-container">
+			<a href="#" class="comment-name">Sadof</a>
+			<p class="comment-body">Ох уж эта верстка</p>
+			<p class="comment-date"> 12:00 29.04.2019</p>
+		</div>
+	</div>
+	<div class="info">
+		<p>Главная страница, моего самодельного сайта. Бекэнд написан на Django.Из написанных модулей здесь представлены:</p>
+		<ul>
+		<li>
+			<h2>Polls</h2>
+			<p>Пример воспроизведенный с официальной документации Django(без каких либо правок).</p>
+		</li>
+		<li>
+			<h2>Blog</h2>
+			<p>Пример, не отличающийся оригинальностью, но выполненный самостоятельно по примеииу Polls.</p>
+		</li>
+		</ul>
+	</div>
+	<div class="info">
+		<p>Главная страница, моего самодельного сайта. Бекэнд написан на Django.Из написанных модулей здесь представлены:</p>
+		<ul>
+		<li>
+			<h2>Polls</h2>
+			<p>Пример воспроизведенный с официальной документации Django(без каких либо правок).</p>
+		</li>
+		<li>
+			<h2>Blog</h2>
+			<p>Пример, не отличающийся оригинальностью, но выполненный самостоятельно по примеииу Polls.</p>
+		</li>
+		</ul>
+	</div>
+	<div class="info">
+		<p>Главная страница, моего самодельного сайта. Бекэнд написан на Django.Из написанных модулей здесь представлены:</p>
+		<ul>
+		<li>
+			<h2>Polls</h2>
+			<p>Пример воспроизведенный с официальной документации Django(без каких либо правок).</p>
+		</li>
+		<li>
+			<h2>Blog</h2>
+			<p>Пример, не отличающийся оригинальностью, но выполненный самостоятельно по примеииу Polls.</p>
+		</li>
+		</ul>
+	</div>
+	</div>
+
+</main>
+<footer class="footer">
+	<div class="footer-container">
+		<p>Contact information: sadof91195@gmail.com</p>
+		<div class="bottomSocial">
+  		<a href="https://vk.com"><img src="if_vk.png"></a>
+  		<a href="https://twitter.com"><img src="if_twitter.png"></a>
+  		<a href="https://facebook.com"><img src="if_facebook.png"></a>
+  </div>
+	</div>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "blog/base_generic.html" %}
+{% load static %}
+{% block content %}
+{% if latest_post_list %}
+
+    {% for post in latest_post_list %}
+
+        <div class="post">
+            {%if perms.blog.delete_post%}
+            <form action="{% url 'blog:delete_post' post.id%}" method="post">
+            {#<a href="{% url 'blog:delete_post' post.id%}" class="deleteButton"><img class="deleteButton" src="{% static 'mysite/images/cansel.png' %}"></img></a>#}
+                {% csrf_token %}
+                <input type="image" src="{% static 'mysite/images/cansel.png' %}"class="deleteButton" value=" "> </input>
+            </form>
+            {%endif%}
+            <h2><a href="{% url 'blog:post' post.id %}">{{ post.post_title }}</a> </h2>
+            <div class="postHeader">By <a href="../accounts/{{post.post_author }}" class="nickname">{{post.post_author}}</a> Posted <span class="postdate">{{post.pub_date}}</span></div>
+		<div class="postBody">{{post.post_text}}</div>
+	</div>
+    {% endfor %}
+
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% endblock %}

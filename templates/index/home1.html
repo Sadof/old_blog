@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's useless page</title>
+</head>
+<body>
+<div>
+<p>HI</p>
+<a href="/admin" style="font-size: 50px">Admin</a>
+<ul>
+<li><a href="/polls">Polls</a></li>
+<li><a href="/blog">Blog</a></li>
+</ul>
+</div>
+{% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Войти</a></li>
+   {% endif %}
+</body>
+</html>

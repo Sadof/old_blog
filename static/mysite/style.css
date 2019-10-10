@@ -1,0 +1,245 @@
+body{
+		font-family: Oswald, sans-serif;
+		font-size: 20px;
+		margin: 0;
+	}
+.nav-container{
+	background: #e0e0e0;
+	position: fixed;
+	left: 0;
+  	right: 0;
+  	top: 0;
+  	box-shadow: 0 0 4px rgb(0,0,0,.4);
+}
+.nav-container ul{
+	width: 1200px;
+	padding: 0;
+	margin: auto;
+	display: flex;
+}
+.nav-container li {
+	list-style: none;
+	border-right: 2px solid #aaa;
+}
+.nav-container li:first-child{
+    border-left: 2px solid #aaa;
+}
+.nav-container li a{
+	text-align: center;
+	display: block;
+	color: #000;
+	text-decoration: none;
+	font-size: 36px;
+	padding: 5px 30px;
+}
+.nav-container li.leftside{
+	margin-left: auto;
+}
+
+.nav-container a:hover{
+	background: #000;
+	color: white;
+}
+.nav-search{
+	box-sizing: border-box;
+	width: 1200px;
+	margin: auto;
+	margin-top: 63px;
+	background: #e8e8e8;
+	height:3em;
+	border-right: 2px solid #bbb;
+	border-left: 2px solid #bbb;
+}
+.nav-search .search{
+	width: 300px;
+	height: 1.5em;
+	float: right;
+	margin:10px;
+}
+.nav-search .search input{
+	display: inline-block;
+	margin:0;
+	padding: 0;
+}
+.nav-search [type=search]{
+	border: 2px solid #aaa;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-right: none;
+	height: 30px;
+	width: 270px;
+}
+.nav-search [type=submit]{
+	content: '';
+	border: 2px solid #aaa;
+	background: #aaa;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-left: none;
+	height: 30px;
+	width: 30px;
+}
+
+.main{
+	width: 1200px;
+	margin: 0px auto;
+	box-sizing: border-box;
+	background: #f5f5f5;
+	box-shadow: 0 0 4px rgb(0,0,0,.2);
+	padding-bottom: 50px;
+	min-height:650px;
+}
+.info{
+	margin: 0 40px;
+
+}
+h1{
+	text-align: center;
+	margin:0px;
+	padding: 10px;
+	font-size: 2em;
+	background: #eee;
+	border-bottom: 2px solid #aaa;
+	box-shadow: 0 0 4px rgb(0,0,0,.4);
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	/*border-right: 2px solid #aaa;
+	border-left: 2px solid #aaa;*/
+}
+.info p{
+ 	padding: 2px;
+ 	margin: 10px ;
+}
+
+
+.footer{
+	width: 100%;
+	padding-bottom : 20px;
+	background: #e0e0e0;
+	min-height: 125px;
+	box-shadow: 0 0 4px rgb(0,0,0,.4);
+
+}
+.footer-container{
+	display: flex;
+	width: 1200px;
+	margin: auto;
+	padding: 20px;
+	padding-top: 40px;
+}
+.footer-container p{
+	margin-top: 0;
+	padding:  20px;
+}
+.bottomSocial{
+	margin-left: auto;
+	display: inline;
+	margin-right:20px;
+}
+.bottomSocial img{
+	margin-left: 10px;
+}
+.bottomSocial img:last-child{
+	margin-left: 0;
+}
+/* post part  */
+.post{
+	border-bottom: 2px solid #aaa;
+	margin: 40px;
+}
+.post .deleteButton{
+display:block;
+float:right;
+width:50px;
+height:50px;
+}
+
+.post h2{
+	font-style: italic;
+	font-size: 1.8em;
+	margin: 0 0 20px;
+}
+.post h2 a{
+text-decoration:none;
+}
+.postHeader{
+	padding:10px 0;
+	font-size: 1.2em;
+}
+.nickname, .postdate{
+	color: #576dfa;
+	text-decoration: none;
+}
+.postBody{
+	line-height: 1.75em;
+}
+/* post part  end*/
+/* post index part  */
+.comment-add{
+	margin: 15px 7px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #aaa;
+}
+.comment-add ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.comment-add li{
+	padding: 8px 0;
+}
+.comment-add input{
+	border: 2px solid #aaa;
+	border-radius: 5px;
+	line-height: 2em;
+	padding: 0 6px;
+}
+.comment-add .comment{
+	width: 400px;
+}
+.comment-container{
+	padding: 10px;
+	border-bottom: 1px solid #aaa;
+}
+.comment-container{
+	padding: 10px;
+	border-bottom: 1px solid #aaa;
+}
+.comment-container:last-child{
+	border-bottom: none;
+}
+.comment-container .comment-name{
+	font-size: 1.1em;
+	text-decoration: none;
+	color: #576dfa;
+}
+.comment-container p{
+	margin:12px 0;
+}
+.comment-container .comment-date{
+	font-size: 0.8em;
+}
+
+
+.divLoginForm{
+margin:10px 20px;;
+}
+.commentSection{
+margin:5px 40px;
+}
+.input[name="post_title"]{
+border: 2px solid #aaa;
+	border-radius: 5px;
+	line-height: 2em;
+	padding: 0 6px;
+}
+.nav-container .userNameMenu{
+    background: #e0e0e0;
+}
+
+.nav-container .userNameMenu li {
+ border:2px solid #aaa;
+}
+.nav-container .userNameMenu li a{
+ font-size: 1em;
+}
